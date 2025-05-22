@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/platformer.dir/src/core/main.cpp.o CMakeFiles/platformer.dir/src/player/player.cpp.o -o platformer  -Wl,-rpath,/usr/local/lib /usr/local/lib/libSDL3.so.0.2.10 

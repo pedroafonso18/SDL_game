@@ -1,0 +1,3 @@
+/home/pedro/Desktop/Projetos/platformer/build/CMakeFiles/platformer.dir
+/home/pedro/Desktop/Projetos/platformer/build/CMakeFiles/edit_cache.dir
+/home/pedro/Desktop/Projetos/platformer/build/CMakeFiles/rebuild_cache.dir
