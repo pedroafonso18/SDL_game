@@ -12,6 +12,8 @@ int main(int argc, char* argv[]) {
     SDL_Renderer* renderer = SDL_CreateRenderer(window, nullptr);
     
     Player player;
+    player.loadSprites(renderer);
+    
     bool running = true;
     SDL_Event event;
     
@@ -38,8 +40,7 @@ int main(int argc, char* argv[]) {
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderFillRect(renderer, &player.getPosition());
+        player.render(renderer);
         
         SDL_RenderPresent(renderer);
     }
