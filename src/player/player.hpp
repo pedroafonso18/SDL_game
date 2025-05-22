@@ -3,14 +3,9 @@
 
 #include <SDL3/SDL.h>
 
-struct PosVector {
-    float x;
-    float y;
-};
-
 class Player {
     private:
-        PosVector currPos;
+        SDL_FRect player;
         float velocity;
         float gravity;
         float mass;
@@ -23,7 +18,7 @@ class Player {
         void jump();
         void update(float deltaTime);
         
-        const PosVector& getPosition() const { return currPos; }
+        const SDL_FRect& getPosition() const { return player; }
 };
 
 #endif

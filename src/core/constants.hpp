@@ -1,0 +1,7 @@
+#ifndef CONSTANTS_HPP
+#define CONSTANTS_HPP
+
+#define SCREENWIDTH 1280
+#define SCREENHEIGHT 720
+
+#endif 

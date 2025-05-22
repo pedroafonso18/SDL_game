@@ -77,4 +77,5 @@ CMakeFiles/platformer.dir/src/player/player.cpp.o: \
  /usr/local/include/SDL3/SDL_timer.h /usr/local/include/SDL3/SDL_tray.h \
  /usr/local/include/SDL3/SDL_version.h \
  /usr/local/include/SDL3/SDL_oldnames.h \
- /home/pedro/Desktop/Projetos/platformer/src/player/player.hpp
+ /home/pedro/Desktop/Projetos/platformer/src/player/player.hpp \
+ /home/pedro/Desktop/Projetos/platformer/src/player/../core/constants.hpp

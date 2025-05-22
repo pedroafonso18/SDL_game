@@ -1,5 +1,6 @@
 #include <SDL3/SDL.h>
 #include "../player/player.hpp"
+#include "constants.hpp"
 
 #define SCREENWIDTH 1280
 #define SCREENHEIGHT 720
@@ -10,6 +11,7 @@ int main(int argc, char* argv[]) {
     SDL_Window* window = SDL_CreateWindow("Platformer", SCREENWIDTH, SCREENHEIGHT, 0);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, nullptr);
     
+    Player player;
     bool running = true;
     SDL_Event event;
     
@@ -20,10 +22,25 @@ int main(int argc, char* argv[]) {
             }
         }
         
+        const bool* keyState = SDL_GetKeyboardState(nullptr);
+        if (keyState[SDL_SCANCODE_LEFT] || keyState[SDL_SCANCODE_A]) {
+            player.move(false);
+        }
+        if (keyState[SDL_SCANCODE_RIGHT] || keyState[SDL_SCANCODE_D]) {
+            player.move(true);
+        }
+        if (keyState[SDL_SCANCODE_SPACE]) {
+            player.jump();
+        }
+        
+        player.update(1.0f/60.0f);
+        
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderFillRect(renderer, &player.getPosition());
+        
         SDL_RenderPresent(renderer);
     }
     

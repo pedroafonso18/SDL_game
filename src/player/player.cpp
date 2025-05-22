@@ -1,20 +1,21 @@
 #include <SDL3/SDL.h>
 #include "player.hpp"
+#include "../core/constants.hpp"
 
 Player::Player() {
-    currPos = {0, 0};
+    player = {100, 100, 50, 50};  // x, y, width, height
     velocity = 0;
-    gravity = 9.8f;
+    gravity = 0.2f;
     mass = 1.0f;
     isGrounded = false;
 }
 
 void Player::move(bool is_right) {
-    float moveSpeed = 5.0f;
+    float moveSpeed = 0.06f;
     if (is_right) {
-        currPos.x += moveSpeed;
+        player.x += moveSpeed;
     } else {
-        currPos.x -= moveSpeed;
+        player.x -= moveSpeed;
     }
 }
 
@@ -28,11 +29,11 @@ void Player::jump() {
 void Player::update(float deltaTime) {
     if (!isGrounded) {
         velocity += gravity * deltaTime;
-        currPos.y += velocity * deltaTime;
+        player.y += velocity * deltaTime;
     }
     
-    if (currPos.y >= 0) {
-        currPos.y = 0;
+    if (player.y >= SCREENHEIGHT - player.h) {
+        player.y = SCREENHEIGHT - player.h;
         velocity = 0;
         isGrounded = true;
     }
